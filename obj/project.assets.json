@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/denis/Desktop/С#/С#.csproj",
+      "projectUniqueName": "/Users/denis/Desktop/Archived/Lab2/С#.csproj",
       "projectName": "С#",
-      "projectPath": "/Users/denis/Desktop/С#/С#.csproj",
+      "projectPath": "/Users/denis/Desktop/Archived/Lab2/С#.csproj",
       "packagesPath": "/Users/denis/.nuget/packages/",
-      "outputPath": "/Users/denis/Desktop/С#/obj/",
+      "outputPath": "/Users/denis/Desktop/Archived/Lab2/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/denis/.nuget/NuGet/NuGet.Config"

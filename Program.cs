@@ -23,14 +23,14 @@ namespace Program
         {
             int number = 0;
 
-            int i = 1;
+            int currentNumber = 1;
 
-            while (i <= n)
+            while (currentNumber <= n)
             {
-                if (i % a == 0 && i % b != 0)
+                if (currentNumber % a == 0 && currentNumber % b != 0)
                     number++;
 
-                i++;
+                currentNumber++;
             }
 
             Console.WriteLine($"Відповідь: {number}");
@@ -40,15 +40,15 @@ namespace Program
         {
             int number = 0;
 
-            int i = 1;
+            int currentNumber = 1;
 
             do
             {
-                if (i % a == 0 && i % b != 0)
+                if (currentNumber % a == 0 && currentNumber % b != 0)
                     number++;
 
-                i++;
-            } while (i <= n);
+                currentNumber++;
+            } while (currentNumber <= n);
 
             Console.WriteLine($"Відповідь: {number}");
         }
@@ -76,9 +76,9 @@ namespace Program
                     max = number;
             }
 
-            int minMaxSum = min + max;
+            int sumMinMax = min + max;
 
-            Console.WriteLine(minMaxSum);
+            Console.WriteLine(sumMinMax);
         }
         //Друга задача (while)
         public static void Func2_while()
@@ -169,17 +169,17 @@ namespace Program
             int amount = int.Parse(Console.ReadLine());
             int indexOfNegative = -1;
 
-            int i = 1;
+            int currentNumber = 1;
 
-            while (i <= amount)
+            while (currentNumber <= amount)
             {
-                PrintOrdinalPrompt(i);
+                PrintOrdinalPrompt(currentNumber);
 
                 int currentNum = int.Parse(Console.ReadLine());
 
                 if (indexOfNegative == -1 && currentNum < 0)
-                    indexOfNegative = i;
-                i++;
+                    indexOfNegative = currentNumber;
+                currentNumber++;
             }
 
             if (indexOfNegative != -1)
@@ -187,7 +187,7 @@ namespace Program
             else
                 Console.WriteLine("\nВід'ємних чисел не знайдено");
         }
-        //Третя задача (for)
+        //Третя задача (do-while)
         public static void Func3_doWhile()
         {
             Console.WriteLine("Введіть кількість елементів.");
@@ -195,18 +195,18 @@ namespace Program
             int amount = int.Parse(Console.ReadLine());
             int indexOfNegative = -1;
 
-            int i = 1;
+            int currentNumber = 1;
 
             do
             {
-                PrintOrdinalPrompt(i);
+                PrintOrdinalPrompt(currentNumber);
 
                 int currentNum = int.Parse(Console.ReadLine());
 
                 if (indexOfNegative == -1 && currentNum < 0)
-                    indexOfNegative = i;
-                i++;
-            } while (i <= amount);
+                    indexOfNegative = currentNumber;
+                currentNumber++;
+            } while (currentNumber <= amount);
 
             if (indexOfNegative != -1)
                 Console.WriteLine($"\nНомер першого від'ємного значення: {indexOfNegative}");
@@ -229,10 +229,9 @@ namespace Program
                 Console.WriteLine("Оберіть задачу для виконання:\n\t1. Перша задача.\n\t2. Друга задача.\n\t3. Третя задача.");
 
                 string? input = Console.ReadLine()?.Trim();
-                //Перевірка вводу юзера
+
                 if (int.TryParse(input, out int userInput))
                 {
-                    //Вибір самої задачі
                     switch (userInput)
                     {
                         //Перша задача
@@ -248,16 +247,19 @@ namespace Program
 
                             switch (subchoice1)
                             {
+                                //Перша задача (for)
                                 case 1:
                                     Program1.Func1_for(k1, k2, n);
 
                                     isRunning = false;
                                     break;
+                                //Пурша задача (while)
                                 case 2:
                                     Program1.Func1_while(k1, k2, n);
 
                                     isRunning = false;
                                     break;
+                                //Перша задача (do-while)
                                 case 3:
                                     Program1.Func1_doWhile(k1, k2, n);
 
@@ -327,7 +329,7 @@ namespace Program
                             continue;
                     }
                 }
-                //Повернення юзера то початку циклу
+                //Повернення юзера до початку циклу
                 else
                 {
                     Console.WriteLine("Введення не може бути пустим, або мати інші символи крім цифр. Введіть число 1-3.");
