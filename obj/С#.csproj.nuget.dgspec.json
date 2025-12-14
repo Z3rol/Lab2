@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/denis/Desktop/Archived/Lab2/С#.csproj": {}
+    "/Users/denis/Documents/Archived/Lab2/С#.csproj": {}
   },
   "projects": {
-    "/Users/denis/Desktop/Archived/Lab2/С#.csproj": {
+    "/Users/denis/Documents/Archived/Lab2/С#.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/denis/Desktop/Archived/Lab2/С#.csproj",
+        "projectUniqueName": "/Users/denis/Documents/Archived/Lab2/С#.csproj",
         "projectName": "С#",
-        "projectPath": "/Users/denis/Desktop/Archived/Lab2/С#.csproj",
+        "projectPath": "/Users/denis/Documents/Archived/Lab2/С#.csproj",
         "packagesPath": "/Users/denis/.nuget/packages/",
-        "outputPath": "/Users/denis/Desktop/Archived/Lab2/obj/",
+        "outputPath": "/Users/denis/Documents/Archived/Lab2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/denis/.nuget/NuGet/NuGet.Config"

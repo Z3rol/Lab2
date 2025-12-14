@@ -152,8 +152,11 @@ namespace Program
 
                 int currentNum = int.Parse(Console.ReadLine());
 
-                if (indexOfNegative == -1 && currentNum < 0)
+                if (currentNum < 0)
+                {
                     indexOfNegative = i;
+                    break;
+                }
             }
 
             if (indexOfNegative > -1)
@@ -171,14 +174,17 @@ namespace Program
 
             int currentNumber = 1;
 
-            while (currentNumber <= amount && indexOfNegative == -1)
+            while (currentNumber <= amount)
             {
                 PrintOrdinalPrompt(currentNumber);
 
                 int currentNum = int.Parse(Console.ReadLine());
 
-                if (indexOfNegative == -1 && currentNum < 0)
+                if (currentNum < 0)
+                {
                     indexOfNegative = currentNumber;
+                    break;
+                }
                 currentNumber++;
             }
 
@@ -203,10 +209,14 @@ namespace Program
 
                 int currentNum = int.Parse(Console.ReadLine());
 
-                if (indexOfNegative == -1 && currentNum < 0)
+                if (currentNum < 0)
+                {
                     indexOfNegative = currentNumber;
+                    break;
+                }
+
                 currentNumber++;
-            } while (currentNumber <= amount && indexOfNegative == -1);
+            } while (currentNumber <= amount);
 
             if (indexOfNegative > -1)
                 Console.WriteLine($"\nНомер першого від'ємного значення: {indexOfNegative}");
