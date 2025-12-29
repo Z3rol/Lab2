@@ -18,6 +18,7 @@ namespace Program
 
             Console.WriteLine($"Відповідь: {number}");
         }
+
         //Перша задача (while)
         public static void Func1_while(int a, int b, int n)
         {
@@ -35,6 +36,7 @@ namespace Program
 
             Console.WriteLine($"Відповідь: {number}");
         }
+
         //Перша задача (do-while)
         public static void Func1_doWhile(int a, int b, int n)
         {
@@ -53,6 +55,7 @@ namespace Program
             Console.WriteLine($"Відповідь: {number}");
         }
     }
+
     //Друга задача
     public class Program2
     {
@@ -60,75 +63,54 @@ namespace Program
         public static void Func2_for()
         {
             int number = int.Parse(Console.ReadLine());
-
             int min = number;
             int max = number;
 
-            //Цикл MinMax
-            for (int i = 0; number != 0; i++)
+            for (int n; (n = int.Parse(Console.ReadLine())) != 0; )
             {
-                number = int.Parse(Console.ReadLine());
-
-                if (number != 0 && number < min)
-                    min = number;
-
-                if (number != 0 && number > max)
-                    max = number;
+                if (n < min) min = n;
+                else if (n > max) max = n;
             }
 
-            int sumMinMax = min + max;
-
-            Console.WriteLine($"Сума мінімального та максимального чисел: {sumMinMax}");
+            Console.WriteLine($"Сума: {min + max}");
         }
+
         //Друга задача (while)
         public static void Func2_while()
         {
             int number = int.Parse(Console.ReadLine());
+            if (number == 0) return;
 
-            int min = number;
-            int max = number;
+            int min = number, max = number;
 
-            //Цикл MinMax
-            while (number != 0)
+            while ((number = int.Parse(Console.ReadLine())) != 0)
             {
-                number = int.Parse(Console.ReadLine());
-
-                if (number != 0 && number < min)
-                    min = number;
-
-                if (number != 0 && number > max)
-                    max = number;
+                if (number < min) min = number;
+                else if (number > max) max = number;
             }
-
-            int sumMinMax = min + max;
-
-            Console.WriteLine($"Сума мінімального та максимального чисел: {sumMinMax}");
+            Console.WriteLine($"Сума: {min + max}");
         }
+
         //Друга задача (do-while)
         public static void Func2_doWhile()
         {
             int number = int.Parse(Console.ReadLine());
+            if (number == 0) return;
 
-            int min = number;
-            int max = number;
+            int min = number, max = number;
 
-            //Цикл MinMax
             do
             {
+                if (number < min) min = number;
+                else if (number > max) max = number;
+
                 number = int.Parse(Console.ReadLine());
-
-                if (number != 0 && number < min)
-                    min = number;
-
-                if (number != 0 && number > max)
-                    max = number;
             } while (number != 0);
 
-            int sumMinMax = min + max;
-
-            Console.WriteLine($"Сума мінімального та максимального чисел: {sumMinMax}");
+            Console.WriteLine($"Сума: {min + max}");
         }
     }
+
     //Третя задача
     public class Program3
     {
@@ -138,6 +120,7 @@ namespace Program
             string suffix = (i % 10 == 3 && i % 100 != 13) ? "-ій" : "-ий";
             Console.Write($"Введіть {i}{suffix} елемент: ");
         }
+
         //Третя задача (for)
         public static void Func3_for()
         {
@@ -164,6 +147,7 @@ namespace Program
             else
                 Console.WriteLine("\nВід'ємних чисел не знайдено");
         }
+
         //Третя задача (while)
         public static void Func3_while()
         {
@@ -193,6 +177,7 @@ namespace Program
             else
                 Console.WriteLine("\nВід'ємних чисел не знайдено");
         }
+
         //Третя задача (do-while)
         public static void Func3_doWhile()
         {
@@ -224,15 +209,16 @@ namespace Program
                 Console.WriteLine("\nВід'ємних чисел не знайдено");
         }
     }
+
     //Main
     public class ProgramMain
     {
-        //Вхідна точка
         public static void Main(string[] args)
         {
             Console.Clear();
 
             bool isRunning = true;
+
             //Цикл вибору задачі
             do
             {
@@ -266,12 +252,14 @@ namespace Program
 
                                     isRunning = false;
                                     break;
-                                //Пурша задача (while)
+
+                                //Перша задача (while)
                                 case 2:
                                     Program1.Func1_while(k1, k2, n);
 
                                     isRunning = false;
                                     break;
+
                                 //Перша задача (do-while)
                                 case 3:
                                     Program1.Func1_doWhile(k1, k2, n);
@@ -280,6 +268,7 @@ namespace Program
                                     break;
                             } 
                             break;
+
                         //Друга задача
                         case 2:
                             Console.Write("Оберіть цикл (1 - for, 2 - while, 3 - do-while): ");
@@ -295,12 +284,14 @@ namespace Program
 
                                     isRunning = false;
                                     break;
+
                                 //Друга задача (while)
                                 case 2:
                                     Program2.Func2_while();
 
                                     isRunning = false;
                                     break;
+
                                 //Друга задача (do-while)
                                 case 3:
                                     Program2.Func2_doWhile();
@@ -309,6 +300,7 @@ namespace Program
                                     break;
                             }
                             break;
+
                         //Третя задача
                         case 3:
                             Console.Write("Оберіть цикл (1 - for, 2 - while, 3 - do-while): ");
@@ -322,12 +314,14 @@ namespace Program
 
                                     isRunning = false;
                                     break;
+
                                 //Третя задача (while)
                                 case 2:
                                     Program3.Func3_while();
 
                                     isRunning = false;
                                     break;
+
                                 //Третя задача (do-while)
                                 case 3:
                                     Program3.Func3_doWhile();
@@ -336,12 +330,14 @@ namespace Program
                                     break;
                             }
                             break;
-                        //Дефолт
+
+                        //Default
                         default:
                             Console.WriteLine("Введено не корректне число.");
                             continue;
                     }
                 }
+
                 //Повернення юзера до початку циклу
                 else
                 {
